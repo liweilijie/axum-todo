@@ -62,3 +62,10 @@ INSERT INTO todo_item (title, list_id) VALUES
 
 本专题代码可以在[axumrs/todo](https://github.com/axumrs/todo)找到。并且，每一章节的代码都以独立分支形式提供。
 
+## 测试
+
+```bash
+http PUT :9527/todo/2/items/4
+http DELETE http://127.0.0.1:9527/todo/2/items/4
+```
+

@@ -36,6 +36,7 @@ pub async fn all(
     Ok(Json(Response::ok(result)))
 }
 
+// http :9527/todo/2/items/4
 pub async fn find(
     Extension(state): Extension<AppState>,
     Path((list_id, item_id)): Path<(i32, i32)>,
@@ -48,6 +49,7 @@ pub async fn find(
     Ok(Json(Response::ok(result)))
 }
 
+// http PUT :9527/todo/2/items/4
 pub async fn check(
     Extension(state): Extension<AppState>,
     Path((list_id, item_id)): Path<(i32, i32)>,
@@ -59,6 +61,8 @@ pub async fn check(
         .map_err(log_error(handler_name.to_string()))?;
     Ok(Json(Response::ok(result)))
 }
+
+// http DELETE http://127.0.0.1:9527/todo/2/items/4
 pub async fn delete(
     Extension(state): Extension<AppState>,
     Path((list_id, item_id)): Path<(i32, i32)>,
